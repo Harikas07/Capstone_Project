@@ -1,5 +1,5 @@
 # Capstone_Project
-🧠 AI-Driven Clinical and Genomic Data Fusion for Early Cancer Diagnosis
+🧠 AI-Driven Multi modal data fusion for Early Cancer Diagnosis
 
 📘 Overview
 
