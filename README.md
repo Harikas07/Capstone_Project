@@ -1,85 +1,83 @@
-# Capstone_Project
-🧠 AI-Driven Multi modal data fusion for Early Cancer Diagnosis
+# Capstone Project
+🧠 **AI-Driven Multi-Modal Data Fusion for Early Cancer Diagnosis**
 
-📘 Overview
+---
 
-This research project aims to develop an AI-driven model that integrates clinical and genomic data from the MMIST-ccRCC dataset to predict early-stage clear cell renal cell carcinoma (ccRCC) characteristics and survival outcomes.
+## 📘 Overview
+This research project develops an AI-driven model integrating clinical and genomic data from the **MMIST-ccRCC** dataset to predict early-stage clear-cell renal cell carcinoma (ccRCC) survival outcomes.  
 
-The focus is on multi-modal data fusion, specifically comparing:
+The project focuses on **multi-modal data fusion**, comparing:
 
-Early fusion: combining clinical and genomic features before model training.
+- **Early Fusion:** Combining clinical and genomic features before model training.  
+- **Late Fusion:** Combining predictions from separate models trained on each modality.  
 
-Late fusion: combining predictions from separate models trained on each modality.
+The goal is to demonstrate how integrating complementary data modalities improves prediction accuracy and interpretability compared to unimodal approaches.
 
-The project demonstrates how integrating complementary data modalities improves prediction accuracy and interpretability compared to unimodal models.
+---
 
-🎯 Objectives
+## 🎯 Objectives
+- Train and evaluate machine learning models using clinical and genomic data.  
+- Implement and compare **early fusion** and **late fusion** strategies.  
+- Assess model performance using **Accuracy, Precision, Recall, F1-score, and ROC-AUC**.  
+- Visualize feature importance and contributions from each modality.
 
-Train and evaluate machine learning models using clinical + genomic data.
+---
 
-Implement and compare early fusion and late fusion strategies.
+## 🧩 Dataset
+**Dataset Name:** MMIST-ccRCC (Multi-Modal Imaging and Clinical Dataset for ccRCC)  
 
-Assess model performance with metrics such as Accuracy, Precision, Recall, F1-score, and AUC.
+**Data Used:**
+- `clinical.csv` – Patient demographics, lab results, and clinical features.  
+- `genomic_split.csv` – Gene expression and mutation data.  
 
-Visualize feature importance and modality contributions.
+> ⚠️ Note: Imaging data (CT/MRI/WSI) is excluded in this study.  
 
-🧩 Dataset
+**Data Source:**  
+Mota, Tiago et al. *“MMIST-ccRCC: A Real-World Medical Dataset for the Development of Multi-Modal Systems.”*  
+[Dataset Website](https://multi-modal-ist.github.io/datasets/ccRCC/)
 
-Dataset Name: MMIST-ccRCC (Multi-Modal Imaging and Clinical Dataset for clear cell Renal Cell Carcinoma)
+---
 
-Data Used:
+## ⚙️ Methodology
 
-clinical.csv – patient demographics, lab results, and clinical features.
+### 1. Data Preprocessing
+- Handle missing values and normalize features.  
+- Encode categorical clinical variables.  
+- Merge datasets on patient identifiers (`case_id`).  
+- Split into **training (70%)**, **validation (15%)**, and **test (15%)** sets.  
 
-genomic_split.csv – gene expression and mutation data.
+### 2. Modeling Approaches
+**Classical ML Models:**  
+- Logistic Regression  
+- Random Forest  
 
-Note: Imaging data is excluded from this study per project scope adjustment.
+**Deep Learning Models:**  
+- Feed-Forward Neural Networks (FFNN / MLP) for each modality.  
 
-Data Source:
+**Fusion Strategies:**  
+- **Early Fusion:** Concatenate feature spaces of clinical + genomic data.  
+- **Late Fusion:** Combine predictions from modality-specific models using ensemble averaging or meta-learning.
 
-Mota, Tiago et al. “MMIST-ccRCC: A Real-World Medical Dataset for the Development of Multi-Modal Systems.”
+### 3. Evaluation Metrics
+- **Accuracy**  
+- **Precision / Recall / F1-Score**  
+- **ROC-AUC (Area Under Curve)**  
+- **Confusion Matrix and ROC Curve Visualization**  
 
-⚙️ Methodology
-1. Data Preprocessing
+---
 
-Handle missing values and normalize features.
+## 📊 Expected Outcomes
+- Cleaned and preprocessed multi-modal dataset.  
+- Trained early and late fusion models.  
+- Comparative charts showing performance improvements over unimodal approaches.  
+- Visualizations of feature importance and modality contributions.  
+- Insights on model interpretability and clinical applicability.
 
-Encode categorical clinical variables.
+---
 
-Merge datasets on patient identifiers.
+## 💻 Usage
 
-Split into training (70%), validation (15%), and test (15%) sets.
-
-2. Modeling Approaches
-
-Baseline Models: Logistic Regression, Random Forest.
-
-Deep Learning Models: MLP architectures for each modality.
-
-Fusion Strategies:
-
-Early Fusion: Concatenate feature spaces from both modalities.
-
-Late Fusion: Combine predictions from modality-specific models using ensemble averaging or meta-learning.
-
-3. Evaluation Metrics
-
-Accuracy
-
-Precision / Recall / F1-Score
-
-AUC (Area Under the ROC Curve)
-
-Confusion Matrix and ROC Curve Visualization
-
-📊 Expected Outcomes
-
-Cleaned and preprocessed multi-modal dataset.
-
-Trained early and late fusion models.
-
-Comparison charts showing performance improvements.
-
-Visualizations of feature importance and fusion contributions.
-
-Insights on model interpretability and clinical applicability.
+1. **Clone the repository**
+```bash
+git clone https://github.com/Harikas07/Capstone_Project.git
+cd Capstone_Project
